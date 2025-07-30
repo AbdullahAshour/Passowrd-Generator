@@ -16,7 +16,7 @@ body {
   width: 550px;
   height: 550px;
   background-color: #1F2937;
-  padding: 115px 52px;
+  padding: 115px 30px;
 }
 
 hr{
@@ -87,13 +87,33 @@ button{
 
 #generated-pw{
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+}
+
+.pw-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+#generated-pw svg{
+  background-color: #273549;
+  height: 40px;
+  border-radius: 0px 6px 6px 0px;
+  padding-right: 3px;
+  cursor: pointer;
+}
+
+#generated-pw svg:hover{
+  filter: brightness(1.2)
 }
 
 .gen{
   width: 211px;
   height: 40px;
-  border-radius: 6px;
+  border-radius: 6px 0px 0px 6px;
   background: #273549;
   color: #55F991;
   display: flex;
@@ -102,6 +122,3 @@ button{
   font-weight: 500;
 }
 
-.gen:last-child{
-  margin-left: 18px;
-}

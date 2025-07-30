@@ -3,6 +3,8 @@ const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O"
 let generateBtn = document.querySelector("button")
 let firstPw = document.querySelector(".pw-1")
 let secondPw = document.querySelector(".pw-2")
+let btnOne = document.querySelector(".img-1")
+let btnTwo = document.querySelector(".img-2")
 
 generateBtn.addEventListener("click", ()=> {
   let length = document.querySelector("#length").value
@@ -21,4 +23,11 @@ generateBtn.addEventListener("click", ()=> {
       secondPw.textContent += characters[randomNumTwo]
     }
   }
+})
+
+btnOne.addEventListener("click", ()=>{
+  navigator.clipboard.writeText(firstPw.textContent)
+})
+btnTwo.addEventListener("click", ()=>{
+  navigator.clipboard.writeText(btnTwo.textContent)
 })
