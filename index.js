@@ -4,9 +4,6 @@ let generateBtn = document.querySelector("button")
 let firstPw = document.querySelector(".pw-1")
 let secondPw = document.querySelector(".pw-2")
 
-let generatedPwOne = []
-let generatedPwTwo = []
-
 generateBtn.addEventListener("click", ()=> {
   let length = document.querySelector("#length").value
   let warning = document.querySelector("small")
@@ -15,17 +12,13 @@ generateBtn.addEventListener("click", ()=> {
   }else{
     firstPw.textContent = ""
     secondPw.textContent = ""
-    generatedPwOne = []
-    generatedPwTwo = []
     warning.textContent = ""
 
     for(let i = 0; i < length; i++){
       let randomNumOne = Math.floor(Math.random() * characters.length)
       let randomNumTwo = Math.floor(Math.random() * characters.length)
-      generatedPwOne.push(characters[randomNumOne]) 
-      generatedPwTwo.push(characters[randomNumTwo]) 
-      firstPw.textContent += generatedPwOne[i]
-      secondPw.textContent += generatedPwTwo[i]
+      firstPw.textContent += characters[randomNumOne]
+      secondPw.textContent += characters[randomNumTwo]
     }
   }
 })
