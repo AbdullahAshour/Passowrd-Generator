@@ -29,5 +29,5 @@ btnOne.addEventListener("click", ()=>{
   navigator.clipboard.writeText(firstPw.textContent)
 })
 btnTwo.addEventListener("click", ()=>{
-  navigator.clipboard.writeText(btnTwo.textContent)
+  navigator.clipboard.writeText(secondPw.textContent)
 })
