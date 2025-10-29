@@ -5,65 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=Karla:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=Karla:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div id="main">
-      <h1>Generate a <br/> <span>random password</span></h1>
+      <h1>
+        Generate a <br />
+        <span>random password</span>
+      </h1>
       <p>Never use an insecure password again.</p>
       <div id="form">
         <div>
           <label for="length">Password Length:</label>
-          <input type="number" id="length" min="4" max="18" value="15">
+          <input type="number" id="length" min="4" max="18" value="15" />
           <small></small>
         </div>
         <button>Generate passwords</button>
       </div>
-      <hr/>
+      <hr />
+      <!-- <small class="sm-1">Copied!!</small> -->
       <div id="generated-pw">
         <div class="pw-container">
+          <small class="sm-1">Copied!!</small>
           <div class="gen pw-1"></div>
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          class="img-1"
-        >
-          <path d="M13 7H7V5H13V7Z" fill="#55F991" />
-          <path d="M13 11H7V9H13V11Z" fill="#55F991" />
-          <path d="M7 15H13V13H7V15Z" fill="#55F991" />
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M3 19V1H17V5H21V23H7V19H3ZM15 17V3H5V17H15ZM17 7V19H9V21H19V7H17Z"
-            fill="#55F991"
-          />
-        </svg>
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="img-1"
+          >
+            <path d="M13 7H7V5H13V7Z" fill="#55F991" />
+            <path d="M13 11H7V9H13V11Z" fill="#55F991" />
+            <path d="M7 15H13V13H7V15Z" fill="#55F991" />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M3 19V1H17V5H21V23H7V19H3ZM15 17V3H5V17H15ZM17 7V19H9V21H19V7H17Z"
+              fill="#55F991"
+            />
+          </svg>
         </div>
+
         <div class="pw-container">
+          <small class="sm-2">Copied!!</small>
           <div class="gen pw-2"></div>
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          class="img-2"
-        >
-          <path d="M13 7H7V5H13V7Z" fill="#55F991" />
-          <path d="M13 11H7V9H13V11Z" fill="#55F991" />
-          <path d="M7 15H13V13H7V15Z" fill="#55F991" />
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M3 19V1H17V5H21V23H7V19H3ZM15 17V3H5V17H15ZM17 7V19H9V21H19V7H17Z"
-            fill="#55F991"
-          />
-        </svg>
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="img-2"
+          >
+            <path d="M13 7H7V5H13V7Z" fill="#55F991" />
+            <path d="M13 11H7V9H13V11Z" fill="#55F991" />
+            <path d="M7 15H13V13H7V15Z" fill="#55F991" />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M3 19V1H17V5H21V23H7V19H3ZM15 17V3H5V17H15ZM17 7V19H9V21H19V7H17Z"
+              fill="#55F991"
+            />
+          </svg>
         </div>
       </div>
     </div>

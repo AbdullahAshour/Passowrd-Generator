@@ -1,47 +1,147 @@
-const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9","~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?",
-"/"];
-let generateBtn = document.querySelector("button") // generating button
-let firstPw = document.querySelector(".pw-1") // First password area
-let secondPw = document.querySelector(".pw-2") // second password area
+const characters = [
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z",
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
+  "0",
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "~",
+  "`",
+  "!",
+  "@",
+  "#",
+  "$",
+  "%",
+  "^",
+  "&",
+  "*",
+  "(",
+  ")",
+  "_",
+  "-",
+  "+",
+  "=",
+  "{",
+  "[",
+  "}",
+  "]",
+  ",",
+  "|",
+  ":",
+  ";",
+  "<",
+  ">",
+  ".",
+  "?",
+  "/",
+];
+let generateBtn = document.querySelector("button"); // generating button
+let firstPw = document.querySelector(".pw-1"); // First password area
+let secondPw = document.querySelector(".pw-2"); // second password area
 // copy icons
-let btnOne = document.querySelector(".img-1") 
-let btnTwo = document.querySelector(".img-2")
+let btnOne = document.querySelector(".img-1");
+let btnTwo = document.querySelector(".img-2");
 
-generateBtn.addEventListener("click", ()=> {
-  let length = document.querySelector("#length").value  // Password's length
-  let warning = document.querySelector("small") // Error message
+generateBtn.addEventListener("click", () => {
+  let length = document.querySelector("#length").value; // Password's length
+  let warning = document.querySelector("small"); // Error message
   // generated passwords database
-  let generatedPwOne = ""
-  let generatedPwTwo = ""
-  if (length < 4 || length > 18){
-    warning.textContent = "Please choose a number between 4 and 18"
-  }else{
+  let generatedPwOne = "";
+  let generatedPwTwo = "";
+  if (length < 4 || length > 18) {
+    warning.textContent = "Please choose a number between 4 and 18";
+  } else {
     // resets to generate a new password
-    firstPw.textContent = ""
-    secondPw.textContent = ""
-    generatedPwOne = ""
-    generatedPwTwo = ""
+    firstPw.textContent = "";
+    secondPw.textContent = "";
+    generatedPwOne = "";
+    generatedPwTwo = "";
     // to remove the warning after the user entered the correct length
-    warning.textContent = ""
+    warning.textContent = "";
 
-    for(let i = 0; i < length; i++){
+    for (let i = 0; i < length; i++) {
       // generating the passwords
-      let randomNumOne = Math.floor(Math.random() * characters.length)
-      let randomNumTwo = Math.floor(Math.random() * characters.length)
+      let randomNumOne = Math.floor(Math.random() * characters.length);
+      let randomNumTwo = Math.floor(Math.random() * characters.length);
       // pushing the generated characters to the database variable
-      generatedPwOne += characters[randomNumOne]
-      generatedPwTwo += characters[randomNumTwo]
+      generatedPwOne += characters[randomNumOne];
+      generatedPwTwo += characters[randomNumTwo];
     }
+
     // displaying the generated password
-    firstPw.textContent = generatedPwOne
-    secondPw.textContent = generatedPwTwo
+    firstPw.textContent = generatedPwOne;
+    secondPw.textContent = generatedPwTwo;
   }
-})
+});
 
 // The copy icon functionality
-btnOne.addEventListener("click", ()=>{
-  navigator.clipboard.writeText(firstPw.textContent)
-})
-btnTwo.addEventListener("click", ()=>{
-  navigator.clipboard.writeText(secondPw.textContent)
-})
+btnOne.addEventListener("click", () => {
+  navigator.clipboard.writeText(firstPw.textContent);
+  document.querySelector(".sm-1").classList.add("copied");
+  setTimeout(() => {
+    document.querySelector(".sm-1").classList.remove("copied");
+  }, 3000);
+});
+btnTwo.addEventListener("click", () => {
+  navigator.clipboard.writeText(secondPw.textContent);
+  document.querySelector(".sm-2").classList.add("copied2");
+  setTimeout(() => {
+    document.querySelector(".sm-2").classList.remove("copied2");
+  }, 3000);
+});

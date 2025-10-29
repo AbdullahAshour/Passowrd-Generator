@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -7,26 +7,26 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #1C1C1C;
+  background-color: #1c1c1c;
   height: 100vh;
   font-family: "Inter", sans-serif;
 }
 
-#main{
+#main {
   width: 550px;
   height: 550px;
-  background-color: #1F2937;
+  background-color: #1f2937;
   padding: 115px 30px;
 }
 
-hr{
-  background-color: #2F3E53;
+hr {
+  background-color: #2f3e53;
   height: 1px;
   border: none;
   margin-bottom: 35px;
 }
 
-h1{
+h1 {
   color: #ffff;
   font-size: 40px;
   line-height: 40px;
@@ -35,30 +35,30 @@ h1{
   margin-bottom: 10px;
 }
 
-span{
-  color: #4ADF86;
+span {
+  color: #4adf86;
 }
 
-p{
-  color: #D5D4D8;
+p {
+  color: #d5d4d8;
   margin-bottom: 50px;
   font-size: 20px;
 }
 
-#form{
+#form {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #D5D4D8;
+  color: #d5d4d8;
   font-size: 16px;
   margin-bottom: 35px;
   position: relative;
 }
 
-input{
+input {
   font-size: 16px;
   background: #273549;
-  color: #55F991;
+  color: #55f991;
   border: none;
   width: 50px;
   padding: 6px;
@@ -66,18 +66,17 @@ input{
   margin-left: 5px;
 }
 
-small{
+small {
   position: absolute;
   left: 0;
   bottom: -25px;
-  color: #E11D48;
+  color: #e11d48;
 }
 
-
-button{
+button {
   border: none;
   color: #ffff;
-  background-color: #10B981;
+  background-color: #10b981;
   width: 191px;
   height: 42px;
   border-radius: 6px;
@@ -85,20 +84,19 @@ button{
   font-size: 16px;
 }
 
-#generated-pw{
+#generated-pw {
   display: flex;
   justify-content: space-between;
-  position: relative;
 }
 
-.pw-container{
+.pw-container {
   display: flex;
   justify-content: center;
   align-items: center;
-
+  position: relative;
 }
 
-#generated-pw svg{
+#generated-pw svg {
   background-color: #273549;
   height: 40px;
   border-radius: 0px 6px 6px 0px;
@@ -106,19 +104,47 @@ button{
   cursor: pointer;
 }
 
-#generated-pw svg:hover{
-  filter: brightness(1.2)
+#generated-pw svg:hover {
+  filter: brightness(1.2);
 }
 
-.gen{
+.gen {
   width: 211px;
   height: 40px;
   border-radius: 6px 0px 0px 6px;
   background: #273549;
-  color: #55F991;
+  color: #55f991;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: 500;
 }
+.sm-1 {
+  position: absolute;
+  top: -20px;
+  left: 194px;
+  opacity: 0;
+  color: #55f991;
+  transition: 1s;
+  height: 10px;
+}
 
+.copied {
+  opacity: 1;
+  transition: 1s;
+}
+
+.copied2 {
+  display: block;
+  transition: 1s;
+}
+
+.sm-2 {
+  position: absolute;
+  top: -20px;
+  left: 200px;
+  height: 10px;
+  display: none;
+  color: #55f991;
+  transition: 1s;
+}
