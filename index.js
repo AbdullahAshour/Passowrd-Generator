@@ -140,8 +140,8 @@ btnOne.addEventListener("click", () => {
 });
 btnTwo.addEventListener("click", () => {
   navigator.clipboard.writeText(secondPw.textContent);
-  document.querySelector(".sm-2").classList.add("copied2");
+  document.querySelector(".sm-2").classList.add("copied");
   setTimeout(() => {
-    document.querySelector(".sm-2").classList.remove("copied2");
+    document.querySelector(".sm-2").classList.remove("copied");
   }, 3000);
 });
