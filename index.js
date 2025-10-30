@@ -145,7 +145,7 @@ btnOne.addEventListener("click", () => {
     document.querySelector(".sm-1").classList.add("copied");
     setTimeout(() => {
       document.querySelector(".sm-1").classList.remove("copied");
-    }, 3000);
+    }, 2000);
   }
 });
 btnTwo.addEventListener("click", () => {
