@@ -66,22 +66,34 @@ input {
   margin-left: 5px;
 }
 
-/* small {
+.warning-msg {
   position: absolute;
   left: 0;
   bottom: -25px;
   color: #e11d48;
-} */
+}
 
 button {
   border: none;
   color: #ffff;
   background-color: #10b981;
+  text-shadow: 0px 0px 4px black;
   width: 191px;
   height: 42px;
   border-radius: 6px;
   font-weight: 500;
   font-size: 16px;
+}
+
+button:hover {
+  background-color: #0ea271;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button.disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
 }
 
 #generated-pw {
@@ -105,7 +117,8 @@ button {
 }
 
 #generated-pw svg:hover {
-  filter: brightness(1.2);
+  filter: brightness(1.3);
+  transition: 0.2s;
 }
 
 .gen {
@@ -119,6 +132,12 @@ button {
   align-items: center;
   font-weight: 500;
 }
+
+.gen:hover {
+  filter: brightness(1.3);
+  transition: 0.2s;
+}
+
 .sm-1 {
   position: absolute;
   top: -20px;
@@ -128,11 +147,6 @@ button {
   transition: 1s;
   height: 10px;
 }
-
-/* .copied2 {
-  display: block;
-  transition: 1s;
-} */
 
 .sm-2 {
   position: absolute;
@@ -146,5 +160,10 @@ button {
 
 .copied {
   opacity: 1;
-  transition: 1s;
+  transition: 0.5s;
+}
+input:focus,
+button:focus {
+  outline: 2px solid #4adf86;
+  outline-offset: 2px;
 }

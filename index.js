@@ -98,50 +98,62 @@ let secondPw = document.querySelector(".pw-2"); // second password area
 let btnOne = document.querySelector(".img-1");
 let btnTwo = document.querySelector(".img-2");
 
+let input = document.querySelector("#length"); // Password's input
+
+input.addEventListener("input", () => {
+  let warning = document.querySelector("small");
+  const isInvalid = input.value < 4 || input.value > 18;
+  generateBtn.disabled = isInvalid;
+  generateBtn.classList.toggle("disabled", isInvalid);
+  if (isInvalid) {
+    warning.textContent = "Please choose a number between 4 and 18"; // Error message
+    warning.focus();
+  } else {
+    warning.textContent = "";
+  }
+});
+
 generateBtn.addEventListener("click", () => {
   let length = document.querySelector("#length").value; // Password's length
-  let warning = document.querySelector("small"); // Error message
   // generated passwords database
   let generatedPwOne = "";
   let generatedPwTwo = "";
-  if (length < 4 || length > 18) {
-    warning.textContent = "Please choose a number between 4 and 18";
-  } else {
-    // resets to generate a new password
-    firstPw.textContent = "";
-    secondPw.textContent = "";
-    generatedPwOne = "";
-    generatedPwTwo = "";
-    // to remove the warning after the user entered the correct length
-    warning.textContent = "";
+  // resets to generate a new password
+  firstPw.textContent = "";
+  secondPw.textContent = "";
+  generatedPwOne = "";
+  generatedPwTwo = "";
 
-    for (let i = 0; i < length; i++) {
-      // generating the passwords
-      let randomNumOne = Math.floor(Math.random() * characters.length);
-      let randomNumTwo = Math.floor(Math.random() * characters.length);
-      // pushing the generated characters to the database variable
-      generatedPwOne += characters[randomNumOne];
-      generatedPwTwo += characters[randomNumTwo];
-    }
-
-    // displaying the generated password
-    firstPw.textContent = generatedPwOne;
-    secondPw.textContent = generatedPwTwo;
+  for (let i = 0; i < length; i++) {
+    // generating the passwords
+    let randomNumOne = Math.floor(Math.random() * characters.length);
+    let randomNumTwo = Math.floor(Math.random() * characters.length);
+    // pushing the generated characters to the database variable
+    generatedPwOne += characters[randomNumOne];
+    generatedPwTwo += characters[randomNumTwo];
   }
+
+  // displaying the generated password
+  firstPw.textContent = generatedPwOne;
+  secondPw.textContent = generatedPwTwo;
 });
 
 // The copy icon functionality
 btnOne.addEventListener("click", () => {
-  navigator.clipboard.writeText(firstPw.textContent);
-  document.querySelector(".sm-1").classList.add("copied");
-  setTimeout(() => {
-    document.querySelector(".sm-1").classList.remove("copied");
-  }, 3000);
+  if (firstPw.textContent !== "") {
+    navigator.clipboard.writeText(firstPw.textContent);
+    document.querySelector(".sm-1").classList.add("copied");
+    setTimeout(() => {
+      document.querySelector(".sm-1").classList.remove("copied");
+    }, 3000);
+  }
 });
 btnTwo.addEventListener("click", () => {
-  navigator.clipboard.writeText(secondPw.textContent);
-  document.querySelector(".sm-2").classList.add("copied");
-  setTimeout(() => {
-    document.querySelector(".sm-2").classList.remove("copied");
-  }, 3000);
+  if (secondPw.textContent !== "") {
+    navigator.clipboard.writeText(secondPw.textContent);
+    document.querySelector(".sm-2").classList.add("copied");
+    setTimeout(() => {
+      document.querySelector(".sm-2").classList.remove("copied");
+    }, 2000);
+  }
 });
