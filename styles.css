@@ -60,10 +60,15 @@ input {
   background: #273549;
   color: #55f991;
   border: none;
-  width: 50px;
+  min-width: 50px;
   padding: 6px;
   border-radius: 6px;
   margin-left: 5px;
+  field-sizing: content;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  margin-left: 4px;
 }
 
 .warning-msg {

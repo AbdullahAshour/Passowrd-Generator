@@ -118,11 +118,6 @@ generateBtn.addEventListener("click", () => {
   // generated passwords database
   let generatedPwOne = "";
   let generatedPwTwo = "";
-  // resets to generate a new password
-  firstPw.textContent = "";
-  secondPw.textContent = "";
-  generatedPwOne = "";
-  generatedPwTwo = "";
 
   for (let i = 0; i < length; i++) {
     // generating the passwords
@@ -157,3 +152,27 @@ btnTwo.addEventListener("click", () => {
     }, 2000);
   }
 });
+
+// A fallback function for unsupported browsers to resize the input dynamically.
+if (!CSS.supports("field-sizing: content")) {
+  document.querySelectorAll(".auto-width").forEach((input) => {
+    const mirror = document.createElement("span");
+    mirror.style.cssText = `
+      position: absolute;
+      visibility: hidden;
+      white-space: pre;
+      font: inherit;
+      padding: 0;
+      border: 0;
+    `;
+    document.body.appendChild(mirror);
+
+    const resize = () => {
+      mirror.textContent = input.value || "";
+      input.style.width = mirror.offsetWidth + 30 + "px"; // +padding fudge
+    };
+
+    resize();
+    input.addEventListener("input", resize);
+  });
+}
